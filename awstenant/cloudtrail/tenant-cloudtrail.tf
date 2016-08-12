@@ -1,4 +1,4 @@
-rsource "aws_cloudtrail" "tenantcloudtrail" {
+resource "aws_cloudtrail" "tenantcloudtrail" {
     provider = "aws.tenant"
     name = "${var.tenantname}-cloudtrail"
     s3_bucket_name = "${var.envname}-cloudtrail"
