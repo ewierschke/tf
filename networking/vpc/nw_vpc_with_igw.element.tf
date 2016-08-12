@@ -1,14 +1,6 @@
-provider "aws" {
-  alias = "tenant"
-  access_key = "${var.tenant_access_key}"
-  secret_key = "${var.tenant_secret_key}"
-  region     = "${var.aws_region}"
-}
-
-
 resource "aws_vpc" "main" {
     provider = "aws.tenant"
-    cidr_block = "${var.cidrblock}"
+    cidr_block = "${var.vpccidrblock}"
     enable_dns_support = true
     enable_dns_hostnames = true
     
