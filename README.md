@@ -1,8 +1,17 @@
 # tf
 terraform configuration files and scripts
 
-# use
+# Use
 Currently used to populate tenant AWS account with appropriate resources linked to master AWS account
+Can also be used by renaming files for execution to populate master AWS account with certain resources to enable tenant account access
+
+Be careful not to commit populated variables.tf file to github
+
+## Prep
+
+```shell
+yum -y install wget unzip git
+```
 
 ## Download terraform
 
@@ -30,16 +39,18 @@ export PATH=$PATH:/terraform
 git clone https://github.com/ewierschke/tf
 ```
 
-## Populate variables.tf file
+## Rename and populate variables.tf file
 
 ```shell
 cd tf
+mv variables.tf.template variables.tf
 vi variables.tf
 ```
 
 ## Run terraform
 
 ```
+terraform get
 terraform plan
 terraform apply
 ```

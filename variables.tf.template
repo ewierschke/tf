@@ -1,0 +1,105 @@
+variable "masteracctid1" {
+  default = "<replaceme>"
+  description = "AWS Account ID of master account"
+}
+variable "master_access_key1" {
+  default = "<replaceme>"
+  description = "If not using IAM role, provide access key for master AWS account"
+}
+variable "master_secret_key1" {
+  default = "<replaceme>"
+  description = "Corresponding secret key for master AWS account"
+}
+variable "tenantacctid1" {
+  default = "<replaceme>"
+  description = "AWS Account ID of tenant account"
+}
+variable "tenant_access_key1" {
+  default = "<replaceme>"
+  description = "If not using IAM role, access key for tenant AWS account"
+}
+variable "tenant_secret_key1" {
+  default = "<replaceme>"
+  description = "Corresponding secret key for tenant AWS account"
+}
+variable "aws_region1" {
+  default = "<replaceme>"
+  description = "AWS region to target resource deployment"
+}
+variable "tenantname1" {
+  default = "<replaceme>"
+  description = "Tenant name in lower case with underscore as spaces ie, tenant_dev"
+}
+variable "tenantnamedash1" {
+  default = "<replaceme>"
+  description = "Tenant name in all lower case with dash as spaces ie, tenant-dev"
+}
+variable "mastervpcid1" {
+  default = "<replaceme>"
+  description = "Master AWS Account VPC ID to be used for peering"
+}
+variable "vpccidrblock1" {
+  default = "<replaceme>"
+  description = "CIDR notation of IP range to be used for tenant VPC ie 10.0.0.0/8"
+}
+variable "envname1" {
+  default = "<replaceme>"
+  description = "Name of master account environment, to be used in various tags and or descriptions ie, example"
+}
+variable "envdomain1" {
+  default = "<replaceme>"
+  description = "Domain name of master account environment ie, example.com"
+}
+variable "parentenv1" {
+  default = "<replaceme>"
+  description = "Environment name of parent to the master account environment, used in paying account configuration"
+}
+variable "peertargetcidr1" {
+  default = "<replaceme>"
+  description = "CIDR notation of IP range used by master AWS account VPC, used for peering"
+}
+variable "pubsub1acidr1" {
+  default = "<replaceme>"
+  description = "CIDR Block for a Public DMZ Subnet (Example: 10.0.32.0/20, 10.0.96.0/20, etc...) in tenant account"
+}
+variable "pubsub2acidr1" {
+  default = "<replaceme>"
+  description = "CIDR Block for a Public DMZ Subnet (Example: 10.0.32.0/20, 10.0.96.0/20, etc...) in tenant account"
+}
+variable "pubsub3acidr1" {
+  default = "<replaceme>"
+  description = "CIDR Block for a Public DMZ Subnet (Example: 10.0.32.0/20, 10.0.96.0/20, etc...) in tenant account"
+}
+variable "privsub1acidr1" {
+  default = "<replaceme>"
+  description = "CIDR Block for a Private Subnet (Example: 10.0.0.0/19, 10.0.64.0/19, 10.0.128.0/19, etc...) in tenant account"
+}
+variable "privsub2acidr1" {
+  default = "<replaceme>"
+  description = "CIDR Block for a Private Subnet (Example: 10.0.0.0/19, 10.0.64.0/19, 10.0.128.0/19, etc...) in tenant account"
+}
+variable "privsub3acidr1" {
+  default = "<replaceme>"
+  description = "CIDR Block for a Private Subnet (Example: 10.0.0.0/19, 10.0.64.0/19, 10.0.128.0/19, etc...) in tenant account"
+}
+variable "peereddomaindnsname1" {
+  default = "<replaceme>"
+  description = "Fully qualified domain name (FQDN) of the peered directory root e.g. ad.example.com"
+}
+variable "peereddc1name1" {
+  default = "<replaceme>"
+  description = "NetBIOS computer name of the first Domain Controller (Example: dc001, dc002, dc003, etc...)"
+}
+variable "peereddc1ip1" {
+  default = "<replaceme>"
+  description = "Private IP for the first Domain Controller instance (e.g. 10.0.0.10, 10.0.64.10, etc...)"
+}
+variable "peereddc2name1" {
+  default = "<replaceme>"
+  description = "NetBIOS computer name of the second Domain Controller (Example: dc001, dc002, dc003, etc...)"
+}
+variable "peereddc2ip1" {
+  default = "<replaceme>"
+  description = "Private IP for the second Domain Controller instance (e.g. 10.0.0.10, 10.0.64.10, etc...)"
+}
+

@@ -39,7 +39,7 @@ resource "aws_route53_record" "peereddcsrvrecordset1" {
 resource "aws_route53_record" "peereddomainarecordset1" {
   provider = "aws.tenant"
   zone_id = "${aws_route53_zone.privatehostedzone.zone_id}"
-  name = "${var.peereddc1name}.${var.peereddomaindnsname}"
+  name = "${var.peereddomaindnsname}."
   type = "A"
   ttl = "300"
   records = [
@@ -83,7 +83,7 @@ resource "aws_route53_record" "peereddcsrvrecordset2" {
 resource "aws_route53_record" "peereddomainarecordset2" {
   provider = "aws.tenant"
   zone_id = "${aws_route53_zone.privatehostedzone.zone_id}"
-  name = "${var.peereddc2name}.${var.peereddomaindnsname}"
+  name = "${var.peereddomaindnsname}."
   type = "A"
   ttl = "300"
   records = [

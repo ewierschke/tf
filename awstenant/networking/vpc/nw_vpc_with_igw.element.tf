@@ -1,4 +1,4 @@
-resource "aws_vpc" "main" {
+resource "aws_vpc" "tenant" {
     provider = "aws.tenant"
     cidr_block = "${var.vpccidrblock}"
     enable_dns_support = true
@@ -9,21 +9,21 @@ resource "aws_vpc" "main" {
     }
 }
 
-resource "aws_internet_gateway" "gw" {
+resource "aws_internet_gateway" "igw" {
     provider = "aws.tenant"
-    vpc_id = "${aws_vpc.main.id}"
+    vpc_id = "${aws_vpc.tenant.id}"
 
     tags {
         Name = "${var.tenantname}-igw"
     }
 }
 
-resource "aws_route_table" "r" {
+resource "aws_route_table" "pub" {
     provider = "aws.tenant"
-    vpc_id = "${aws_vpc.main.id}"
+    vpc_id = "${aws_vpc.tenant.id}"
     route {
         cidr_block = "0.0.0.0/0"
-        gateway_id = "${aws_internet_gateway.gw.id}"
+        gateway_id = "${aws_internet_gateway.igw.id}"
     }
 
     tags {
@@ -32,18 +32,18 @@ resource "aws_route_table" "r" {
 }
 
 output "VPC" {
-  value = "${aws_vpc.main.id}"
+  value = "${aws_vpc.tenant.id}"
 }
 
 output "VPCCIDR" {
-  value = "${aws_vpc.main.cidr_block}"
+  value = "${aws_vpc.tenant.cidr_block}"
 }
 
 output "InternetGatewayId" {
-  value = "${aws_internet_gateway.gw.id}"
+  value = "${aws_internet_gateway.igw.id}"
 }
 
 output "PublicRouteTableId" {
-  value = "${aws_route_table.r.id}"
+  value = "${aws_route_table.pub.id}"
 }
 

@@ -15,3 +15,5 @@ variable "masteracctid" {}
 variable "mastervpcid" {}
 variable "tenantvpcid" {}
 variable "tenantnamedash" {}
+variable "pubroutetable" {}
+variable "privroutetable" {}

@@ -1,4 +1,4 @@
-resource "aws_subnet" "main" {
+resource "aws_subnet" "pubsub" {
     provider = "aws.tenant"
     vpc_id = "${var.vpc_id}"
     cidr_block = "${var.cidrblock}"
@@ -10,21 +10,21 @@ resource "aws_subnet" "main" {
     }
 }
 
-resource "aws_route_table_association" "a" {
+resource "aws_route_table_association" "pubrtb" {
     provider = "aws.tenant"
-    subnet_id = "${aws_subnet.main.id}"
+    subnet_id = "${aws_subnet.pubsub.id}"
     route_table_id = "${var.route_table_id}"
 }
 
 output "PublicSubnetId" {
-  value = "${aws_subnet.main.id}"
+  value = "${aws_subnet.pubsub.id}"
 }
 
 output "PublicSubnetCIDR" {
-  value = "${aws_subnet.main.cidr_block}"
+  value = "${aws_subnet.pubsub.cidr_block}"
 }
 
 output "AvailabilityZoneName" {
-  value = "${aws_subnet.main.availability_zone}"
+  value = "${aws_subnet.pubsub.availability_zone}"
 }
 
