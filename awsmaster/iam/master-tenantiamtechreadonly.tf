@@ -1,4 +1,4 @@
-resource "aws_iam_role_policy" "mastertenantprojadminpolicy" {
+resource "aws_iam_role_policy" "mastertenanttechreadonlypolicy" {
     provider = "aws.master"
     name = "T_${var.tenantname}_TECHREADONLY_U_POL"
     role = "${aws_iam_role.mastertenanttechreadonlyrole.id}"
